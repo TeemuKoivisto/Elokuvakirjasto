@@ -11,7 +11,10 @@ module.exports = function(config){
       'web/bower_components/angularfire/dist/angularfire.min.js',
       'web/app/app.js',
       'web/app/**/**.js',
-      'test/*.js'
+      'test/*.js',
+      'web/app/controllers/add_movie_controller.js',
+      'web/app/controllers/list_movie_controller.js',
+      'web/app/services/firebase_service.js',
     ],
 
     autoWatch : true,

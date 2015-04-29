@@ -1,0 +1,6 @@
+<a ng-href="#/movies/new">Luo uusi elokuva</a>
+<h2>Kaikki elokuvat</h2>
+<ul ng-repeat="movie in movies">
+    <strong>{{movie.name}} ({{movie.release}})</strong>, director: {{movie.director}}
+    <br>{{movie.description}}
+</ul>
