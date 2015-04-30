@@ -5,7 +5,6 @@ ElokuvaApp.config(function ($routeProvider) {
             .when('/', {
                 controller: 'ListMovieController',
                 templateUrl: 'app/views/show_all.html'
-//                templateUrl: 'index.html'
             })
             .when('/movies', {
                 controller: 'ListMovieController',
@@ -14,5 +13,9 @@ ElokuvaApp.config(function ($routeProvider) {
             .when('/movies/new', {
                 controller: 'AddMovieController',
                 templateUrl: 'app/views/new.html'
+            })
+            .when('/movies/:id/edit', {
+                controller: 'EditMovieController',
+                templateUrl: 'app/views/edit.html'
             })
 })
