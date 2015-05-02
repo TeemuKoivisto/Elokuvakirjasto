@@ -16,8 +16,8 @@ ElokuvaApp.controller('OmbdController', function ($scope, OmbdService, $routePar
                 }
             });
         }
-//        else {
-//            $scope.movies = "";
-//        }
+        else {
+            $scope.movies = [];
+        }
     }
 });
