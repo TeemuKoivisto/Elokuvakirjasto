@@ -1,0 +1,21 @@
+<a ng-href="#/movies">Näytä kaikki</a>
+<a ng-href="#/movies/new">Luo uusi elokuva</a>
+<h2>Ombd haku</h2>
+
+<form name="searchForm">
+    <p>
+        <label>Nimi</label>
+        <input name="moviename" type="text" ng-model="titlefield">
+    </p>
+    <p>
+        <label>Julkaisuvuosi</label>
+        <input name="release" type="text" ng-model="yearfield">
+    </p>
+    <button type="submit" ng-click="searchMovie()">Hae</button>
+</form>
+
+<h3><span ng-pluralize count="movies.length" when="{ '0': 'Haulla ei löytynyt elokuvia', 'one': 'Haulla löytyi 1 elokuva', 'other': 'Haulla löytyi {} elokuvaa' }"></span></h3>
+<ul ng-repeat="movie in movies">
+    <strong><a ng-href="http://www.imdb.com/title/{{movie.imdbID}}">{{movie.Title}}</a> ({{movie.Year}})</strong>, type: {{movie.Type}}
+</ul>
+

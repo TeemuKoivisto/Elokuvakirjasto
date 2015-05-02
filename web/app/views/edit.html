@@ -1,4 +1,5 @@
 <a ng-href="#/movies">Näytä kaikki</a>
+<a ng-href="#/movies/ombd">Ombd haku</a>
 <form name="movieForm">
     <h2>Muokkaa elokuvaa {{movie.name}}</h2>
     <p>
@@ -29,5 +30,5 @@
             Kuvaus ei saa olla tyhjä.
         </div>
     </p>
-    <button type="submit" ng-disabled="movieForm.$invalid" ng-click="editMovie()">Lisää</button>
+    <button type="submit" ng-disabled="movieForm.$invalid" ng-click="editMovie()">Muokkaa</button>
 </form>

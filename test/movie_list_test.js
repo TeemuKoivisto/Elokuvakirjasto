@@ -37,6 +37,7 @@ describe('Movie list', function () {
 
         // Lisää vakoilijat
          spyOn(FirebaseServiceMock, 'getMovies').and.callThrough();
+         spyOn(FirebaseServiceMock, 'removeMovie').and.callThrough();
 
         // Injektoi toteuttamasi kontrolleri tähän
         inject(function ($controller, $rootScope) {
@@ -71,6 +72,10 @@ describe('Movie list', function () {
      * käyttämällä toBeCalled-oletusta.
      */
     it('should be able to remove a movie', function () {
-        expect(true).toBe(false);
+        var movies = FirebaseServiceMock.getMovies();
+        expect(movies.length).toBe(2);
+        FirebaseServiceMock.removeMovie(0);
+        expect(movies.length).toBe(1);
+        expect(FirebaseServiceMock.removeMovie).toHaveBeenCalled();
     });
 });

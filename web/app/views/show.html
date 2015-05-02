@@ -1,0 +1,21 @@
+<a ng-href="#/movies">Näytä kaikki</a>
+<a ng-href="#/movies/ombd">Ombd haku</a>
+    <h2>Elokuva: {{movie.name}}</h2>
+    <p>
+        <label>Nimi: </label>
+        <b>{{movie.name}}</b>
+    </p>
+    <p>
+        <label>Ohjaaja: </label>
+        <b>{{movie.director}}</b>
+    </p>
+    <p>
+        <label>Julkaisuvuosi: </label>
+        <b>{{movie.release}}</b>
+    </p>
+    <p>
+        <label>Kuvaus: </label>
+        <b>{{movie.description}}</b>
+    </p>
+    <a ng-href="#/movies/{{movie.$id}}/edit"><button>Muokkaa</button></a>
+    <button type="submit" ng-click="deleteMovie()">Poista</button>
