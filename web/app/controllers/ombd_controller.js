@@ -7,17 +7,17 @@ ElokuvaApp.controller('OmbdController', function ($scope, OmbdService, $routePar
     $scope.yearfield = "";
 
     $scope.searchMovie = function () {
+        console.log("hello");
         if ($scope.titlefield) {
             OmbdService.findMovie($scope.titlefield, $scope.yearfield).success(function (movies) {
+                console.log("tuliko ulos mitään " + movies);
+                console.log("entä onko tällä search " + movies.Search);
                 if (movies.Search) {
                     $scope.movies = movies.Search;
                 } else {
                     $scope.movies = [];
                 }
             });
-        }
-        else {
-            $scope.movies = [];
         }
     }
 });
