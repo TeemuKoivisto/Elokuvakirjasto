@@ -1,5 +1,3 @@
-<a ng-href="#/movies/new">Luo uusi elokuva</a>
-<a ng-href="#/movies/ombd">Ombd haku</a>
 <h2>Kaikki elokuvat</h2>
 <ul ng-repeat="movie in movies">
     <strong><a ng-href="#/movies/{{movie.$id}}/show">{{movie.name}}</a> ({{movie.release}})</strong>, director: {{movie.director}}

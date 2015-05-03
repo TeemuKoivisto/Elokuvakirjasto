@@ -1,5 +1,9 @@
-ElokuvaApp.controller('EditMovieController', function ($scope, FirebaseService, $routeParams, $location) {
-    FirebaseService.getMovie($routeParams.id, function(data) {
+ElokuvaApp.controller('EditMovieController', function ($scope, currentAuth, FirebaseService, $routeParams, $location) {
+    if (!currentAuth) {
+        $location.path('/login');
+    }
+
+    FirebaseService.getMovie($routeParams.id, function (data) {
         console.log("data nimi on " + data.name);
         $scope.movie = data;
     });

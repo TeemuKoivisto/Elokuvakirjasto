@@ -1,5 +1,8 @@
 ElokuvaApp.controller('ShowMovieController', function ($scope, FirebaseService, $routeParams, $location) {
-    FirebaseService.getMovie($routeParams.id, function(data) {
+//    if (!currentAuth) {
+//        $location.path('/login');
+//    }
+    FirebaseService.getMovie($routeParams.id, function (data) {
         console.log("data nimi on " + data.name);
         $scope.movie = data;
     });
