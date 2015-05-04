@@ -1,18 +1,19 @@
-<h2>Kirjaudu sisään</h2>
-
+<h1>Kirjaudu sisään</h1>
 <form name="loginForm">
-    <p>
-        <input name="email" type="text" ng-model="email" required  ng-pattern="/^.+@.+\..+$/">
+    <div class="form-group">
         <label>Sähköposti</label>
-    <div ng-show="loginForm.email.$invalid && loginForm.email.$dirty">
-         Sähköpostin tulee olla oikeaa muotoa joku@jossain.com.
+        <input name="email" class="form-control" type="text" ng-model="email" required  ng-pattern="/^.+@.+\..+$/">
+        <div ng-show="loginForm.email.$invalid && loginForm.email.$dirty">
+            Sähköpostin tulee olla oikeaa muotoa joku@jossain.com.
+        </div>
     </div>
-    <p>
-        <input name="password" type="password" ng-model="password" required ng-minlength="1">
+    <div class="form-group">
         <label>Salasana</label>
-    <div ng-show="loginForm.password.$invalid && loginForm.password.$dirty">
-        Salasana ei saa olla tyhjä.
+        <input name="password" class="form-control" type="password" ng-model="password" required ng-minlength="1">
+        <div ng-show="loginForm.password.$invalid && loginForm.password.$dirty">
+            Salasana ei saa olla tyhjä.
+        </div>
     </div>
-    <button type="submit" ng-disabled="loginForm.$invalid" ng-click="logIn()">Kirjaudu sisään</button>
+    <button type="submit" class="btn btn-primary" ng-disabled="loginForm.$invalid" ng-click="logIn()">Kirjaudu sisään</button>
 </form>
 <span ng-if="message">{{message}}</span>

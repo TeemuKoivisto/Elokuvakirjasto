@@ -1,27 +1,26 @@
-<h2>Rekisteröidy</h2>
-
+<h1>Rekisteröidy</h1>
 <form name="registerForm">
-    <p>
-        <input name="newEmail" type="text" ng-model="newEmail" required  ng-pattern="/^.+@.+\..+$/">
+    <div class="form-group">
         <label>Sähköposti</label>
-    <div ng-show="registerForm.newEmail.$invalid && registerForm.newEmail.$dirty">
-         Sähköpostin tulee olla oikeaa muotoa joku@jossain.com.
+        <input name="newEmail" class="form-control" type="text" ng-model="newEmail" required  ng-pattern="/^.+@.+\..+$/">
+        <div ng-show="registerForm.newEmail.$invalid && registerForm.newEmail.$dirty">
+            Sähköpostin tulee olla oikeaa muotoa joku@jossain.com.
+        </div>
     </div>
-    <!--</p>-->
-    <p>
-        <input name="newPassword" type="password" ng-model="newPassword" required ng-minlength="1">
+    <div class="form-group">
         <label>Salasana</label>
-    <div ng-show="registerForm.newPassword.$invalid && registerForm.newPassword.$dirty">
-        Salasana ei saa olla tyhjä.
+        <input name="newPassword" class="form-control" type="password" ng-model="newPassword" required ng-minlength="1">
+        <div ng-show="registerForm.newPassword.$invalid && registerForm.newPassword.$dirty">
+            Salasana ei saa olla tyhjä.
+        </div>
     </div>
-    <!--</p>-->
-    <p>
-        <input name="passwordConfirm" type="password" ng-model="passwordConfirm" match="newPassword">
+    <div class="form-group">
         <label>Salasana toistamiseen</label>
-    <div ng-show="registerForm.passwordConfirm.$invalid && registerForm.passwordConfirm.$dirty">
-        Salasanat eivät täsmää.
+        <input name="passwordConfirm" class="form-control" type="password" ng-model="passwordConfirm" match="newPassword">
+        <div ng-show="registerForm.passwordConfirm.$invalid && registerForm.passwordConfirm.$dirty">
+            Salasanat eivät täsmää.
+        </div>
     </div>
-    <!--</p>-->
-    <button type="submit" ng-disabled="registerForm.$invalid" ng-click="register()">Rekisteröidy</button>
+    <button type="submit" class="btn btn-primary" ng-disabled="registerForm.$invalid" ng-click="register()">Rekisteröidy</button>
 </form>
 <span ng-if="message">{{message}}</span>

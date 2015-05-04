@@ -10,8 +10,24 @@
     </head>
     <body ng-app="ElokuvaApp">
         <header>
-            <nav>
-                <ul>
+            <nav class="navbar navbar-default">
+                <div class="navbar-header">
+                    <a class="navbar-brand" ng-href="#/movies">Elokuvakirjasto</a>
+                    <ul class="nav navbar-nav">
+                        <li><a ng-href="#/movies/new">Luo uusi elokuva</a></li>
+                        <li><a ng-href="#/movies/ombd">Ombd haku</a></li>
+                    </ul>
+                </div>
+                <div class="pull-right">
+                    <span ng-show="userLoggedIn">
+                        <button class="btn btn-default" ng-click="logOut()">Kirjaudu ulos {{userLoggedIn.password.email}}</button>
+                    </span>
+                    <span ng-hide="userLoggedIn">
+                        <a ng-href="#/login"><button type="button" class="btn btn-default navbar-btn">Kirjaudu sisään</button></a>
+                        <a ng-href="#/user/new"><button class="btn btn-default" ng-href="#/user/new">Rekisteröidy</button></a>
+                    </span>
+                </div>
+<!--                <ul>
                     <a ng-href="#/movies"><button ng-href="#/movies">Näytä kaikki</button></a>
                     <span ng-show="userLoggedIn">
                         <button ng-click="logOut()">Kirjaudu ulos {{userLoggedIn.password.email}}</button>
@@ -22,7 +38,7 @@
                         <a ng-href="#/user/new"><button ng-href="#/user/new">Rekisteröidy</button></a>
                     </span>
                     <a ng-href="#/movies/ombd"><button ng-href="#/movies/ombd">Ombd haku</button></a>
-                </ul>
+                </ul>-->
             </nav>
         </header>
         <div ng-view></div>
